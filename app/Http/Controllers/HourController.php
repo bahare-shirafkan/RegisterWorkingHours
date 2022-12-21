@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\HourService;
 use Exception;
-use HourService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;

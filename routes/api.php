@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\api\v1\AuthController;
+use App\Http\Controllers\api\v1\HourController;
+use App\Http\Controllers\api\v1\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::group(['prefix' => '/v1'], function () {
+Route::group(['prefix' => '/v1', 'middleware' => 'auth:sanctum'], function () {
+    Route::put('login', [AuthController::class, 'login']);
     Route::post('/user', [UserController::class, 'create']);
     Route::get('/user', [UserController::class, 'index']);
+    Route::post('/hour', [HourController::class, 'create']);
+    Route::get('hour', [HourController::class, 'index']);
 });

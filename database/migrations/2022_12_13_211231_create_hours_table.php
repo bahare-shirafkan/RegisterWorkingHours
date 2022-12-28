@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamp(Hour::COL_DATE);
             $table->string(Hour::COL_FROM_TIME);
             $table->string(Hour::COL_TO_TIME);
-            $table->string(Hour::COL_VALUE)->nullable();
+            $table->integer(Hour::COL_DIFF_TIME)->nullable();
             $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
             $table->softDeletes();

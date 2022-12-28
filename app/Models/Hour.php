@@ -18,7 +18,7 @@ class Hour extends Model
     const COL_DATE = 'date';
     const COL_FROM_TIME = 'from_time';
     const COL_TO_TIME = 'to_time';
-    const COL_VALUE = 'value';
+    const COL_DIFF_TIME = 'diff_time';
     const COL_CREATED_BY = 'created_by';
 
     protected $fillable = [
@@ -27,12 +27,11 @@ class Hour extends Model
         self::COL_DATE,
         self::COL_FROM_TIME,
         self::COL_TO_TIME,
-        self::COL_VALUE
+        self::COL_DIFF_TIME
     ];
 
     protected $casts = [
         self::COL_DATE => 'date',
-        self::COL_VALUE => 'float'
     ];
 
     public function modelFilter()

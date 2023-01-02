@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HourController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/user', [UserController::class, 'index']);
     Route::post('/hour', [HourController::class, 'create'])->name('hour-store');
     Route::get('/hour', [HourController::class, 'index'])->name('list-hour');
+    Route::get('/setting', [SettingController::class, 'index'])->name('setting-index');
+    Route::post('/setting', [SettingController::class, 'create'])->name('setting');
 });

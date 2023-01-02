@@ -19,12 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/', [AuthController::class, 'index']);
-Route::get('login', [AuthController::class, 'index']);
+Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('login', [AuthController::class, 'login'])->name('login-store');
 
 Route::group(['middleware' => 'web'], function () {
     Route::post('/user', [UserController::class, 'create']);
     Route::get('/user', [UserController::class, 'index']);
-    Route::post('/hour', [HourController::class, 'create'])->name('hour-store')->middleware('auth:web');
-    Route::get('hour', [HourController::class, 'index']);
+    Route::post('/hour', [HourController::class, 'create'])->name('hour-store');
+    Route::get('/hour', [HourController::class, 'index'])->name('list-hour');
 });

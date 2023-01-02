@@ -22,7 +22,7 @@ class Setting extends Model
     ];
 
     protected $casts = [
-        self::COL_SALARY_HOUR => 'number'
+        self::COL_SALARY_HOUR => 'float'
     ];
 
     public function user(): BelongsTo

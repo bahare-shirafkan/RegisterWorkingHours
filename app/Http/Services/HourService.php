@@ -16,19 +16,20 @@ class HourService
     {
         $user_id = Auth::user()->id ?? 1;
         $setting = Setting::where(Setting::COL_USER_ID, $user_id)->first();
-        $sum = 0;
+        // $sum = 0;
         $res= null;
+        $message=null;
         if (isset($setting) && !empty($setting)) {
             $res= Hour::where(Hour::COL_USER_ID, $user_id)->get();
-            foreach ($res as $item) {
-                $sum += $item['diff_time'] * 70000;
-            }
+            // foreach ($res as $item) {
+            //     $sum += $item['diff_time'] * 70000;
+            // }
         } else {
             // TODO:i do its after
-            $message= null;
+            $message="i do its after";
         }
 
-        return view('list', compact('res', 'sum','message'));
+        return view('list', compact('res', 'setting','message'));
     }
 
     public static function create($request)

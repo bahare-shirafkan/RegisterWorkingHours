@@ -27,6 +27,9 @@
             <div class="col-3">
                 <button id="btnAddRow" class="btn btn-warning" type="button">Add to Row</button>
             </div>
+            <div class="col-3">
+                <a href="{{route('list-hour')}}" class="btn btn-warning">list hour</a>
+            </div>
         </div>
         <form action="{{route('hour-store')}}" method="post" name="myform" id="myform">
             @csrf

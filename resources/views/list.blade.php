@@ -13,7 +13,7 @@
         @php($sum=0)
         @foreach ($res as $item)
         <tr id="row">
-            <td>{{date('Y-m-d',strtotime($item['date']))}}</td>
+            <td>{{jdate($item['date'])->format('Y-m-d')}}</td>
             <td>{{$item['from_time']}}</td>
             <td>{{$item['to_time']}}</td>
             <td>{{$item['diff_time']}}</td>

@@ -40,7 +40,7 @@ body {
     line-height: 1.5;
     color: #515151;
     text-align: left;
-    background-color: #e9edf4;
+    background-color: #ffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -151,7 +151,7 @@ h1, .h1 {
     top: 0;
     bottom: 0;
     overflow: auto;
-    background-color: #373193;
+    background-color: #1407ffa1;
 }
 
 .dashboard-compact .dashboard-nav {
@@ -186,10 +186,6 @@ h1, .h1 {
 
 .dashboard-nav a:hover {
     text-decoration: none;
-}
-
-.dashboard-nav {
-    background-color: #443ea2;
 }
 
 .dashboard-nav a {

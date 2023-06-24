@@ -16,10 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => '/v1', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => '/v1','middleware' => 'auth:sanctum'], function () {
     Route::put('login', [AuthController::class, 'login']);
     Route::post('/user', [UserController::class, 'create']);
     Route::get('/user', [UserController::class, 'index']);
     Route::post('/hour', [HourController::class, 'create']);
     Route::get('hour', [HourController::class, 'index']);
+    Route::get('/generate/token-zoho',[HourController::class,'generate_token_zoho']);
+    Route::get('/generate/refresh/token',[HourController::class,'generate_refresh_token']);
+    Route::get('/generate/access/token',[HourController::class,'generate_access_token']);
+    Route::get('/insert/recoard',[HourController::class,'insert']);
+    Route::get('/insert-transaction',[HourController::class,'insert_transaction']);
 });

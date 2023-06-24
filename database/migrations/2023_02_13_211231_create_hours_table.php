@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Hour;
-use App\Models\User;
+use App\Models\Job;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string(Hour::COL_FROM_TIME);
             $table->string(Hour::COL_TO_TIME);
             $table->integer(Hour::COL_DIFF_TIME)->nullable();
-            $table->foreignIdFor(User::class)->constrained();
+            $table->foreignIdFor(Job::class)->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

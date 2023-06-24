@@ -1,5 +1,5 @@
 @extends('app')
-<link rel="stylesheet" href="css/persian-datepicker.min.css">@section('content')
+<link rel="stylesheet" href="{{asset('css/persian-datepicker.min.css')}}">@section('content')
 <div class="row" dir="rtl">
     <div class="col-3">
         <input class="form-control" type="text" id="numberRow" style="float: left;">
@@ -8,7 +8,7 @@
         <button id="btnAddRow" class="btn btn-warning" style="float: right;" type="button">Add to Row</button>
     </div>
 </div>
-<form action="{{route('hour-store')}}" method="post" name="myform" id="myform">
+<form action="{{route('hour-store',$job_id)}}" method="post" name="myform" id="myform">
     @csrf
     <table class="table-striped" id="table">
 
@@ -31,17 +31,16 @@
 </form>
 
 @endsection
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/persian-date.min.js"></script>
-<script src="js/persian-datepicker.min.js"></script>
-<script src="js/app.js"></script>
+<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('js/persian-date.min.js')}}"></script>
+<script src="{{asset('js/persian-datepicker.min.js')}}"></script>
 <script type="text/javascript">
-  $(document).ready(function() {
-    $('.initial-value-example').persianDatepicker({
-    initialValue: false,
-    observer: true,
-    format: 'YYYY/MM/DD',
-    altField: '.observer-example-alt'
-});
-  });
+    $(document).ready(function() {
+        $('.initial-value-example').persianDatepicker({
+            initialValue: false,
+            observer: true,
+            format: 'YYYY/MM/DD',
+            altField: '.observer-example-alt'
+        });
+    });
 </script>

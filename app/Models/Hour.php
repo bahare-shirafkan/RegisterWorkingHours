@@ -14,7 +14,7 @@ class Hour extends Model
     use HasFactory, SoftDeletes, Filterable;
 
     const COL_ID = 'id';
-    const COL_USER_ID = 'user_id';
+    const COL_JOB_ID='job_id';
     const COL_DATE = 'date';
     const COL_FROM_TIME = 'from_time';
     const COL_TO_TIME = 'to_time';
@@ -22,7 +22,7 @@ class Hour extends Model
     const COL_CREATED_BY = 'created_by';
 
     protected $fillable = [
-        self::COL_USER_ID,
+        self::COL_JOB_ID,
         self::COL_DATE,
         self::COL_DATE,
         self::COL_FROM_TIME,
@@ -39,12 +39,12 @@ class Hour extends Model
         return $this->provideFilter(HourFilter::class);
     }
 
-    public function user(): BelongsTo
+    public function job(): BelongsTo
     {
         return $this->belongsTo(
-            User::class,
-            self::COL_USER_ID,
-            User::COL_ID
+            Job::class,
+            self::COL_JOB_ID,
+            Job::COL_ID
         );
     }
 }

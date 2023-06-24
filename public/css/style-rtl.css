@@ -1,0 +1,7 @@
+.control-label{
+    float: right;   
+    text-align:right; 
+}
+.form-horizontal{
+    direction: rtl;
+}

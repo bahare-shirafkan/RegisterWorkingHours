@@ -5,7 +5,7 @@
         <header><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#" class="brand-logo"><i class="fas fa-anchor"></i> <span>BSH</span></a></header>
         <nav class="dashboard-nav-list"><a href="{{route('dashboard')}}" class="dashboard-nav-item">
         <i class="fas fa-home"></i>Home </a>
-            <a href="{{route('list-hour')}}" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> List hour Working </a>
+            <a href="{{route('job')}}" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> List Jobs </a>
             <!-- <div class='dashboard-nav-dropdown'><a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-photo-video"></i> Media </a>
                 <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a><a href="#" class="dashboard-nav-dropdown-item">Recent</a><a href="#" class="dashboard-nav-dropdown-item">Images</a><a href="#" class="dashboard-nav-dropdown-item">Video</a></div>
             </div>
